@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+:root {
+  --gridCols: 1;
+  --gridRows: 1;
+}
+
+.title {
+  display: grid;
+  place-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  padding: 20px 0px 20px 0px;
+  margin: 5px;
+}
+
+.drawing-plate {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  place-items: center;
+  background: blue;
+}
+
+.cursor-color-btns {
+  display: flex;
+  flex-direction: column;
+  min-height: 20vh;
+  justify-content: space-evenly;
+  padding: 10px 10px;
+  background: lemonchiffon;
+}
+
+.flex-items {
+  margin: 2px;
+  padding: 2px;
+  font-family: "Roboto", sans-serif;
+}
+
+.plate-container {
+  display: grid;
+  grid-template-columns: repeat(var(--gridCols), 1fr);
+  grid-template-rows: repeat(var(--gridrows), 1fr);
+  margin: 10px;
+  width: 500px;
+  height: 500px;
+  background-color: blanchedalmond;
+}
+
+/* .grid-items {
+  border: 1px solid black;
+} */
