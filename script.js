@@ -29,9 +29,25 @@ function grid(rows, columns) {
   }
 }
 
-grid(29, 29);
+grid(16, 16);
 
 //*single color mode
+const colorMode = document.querySelector(".color-mode");
+
+function singleMode() {
+  let colorValue = document.querySelector("#favcolor").value;
+  return colorValue;
+}
+
+colorMode.addEventListener("click", function () {
+  brush();
+});
+
+function brush() {
+  colorContainer.addEventListener("mouseover", function (e) {
+    e.target.style.backgroundColor = singleMode(0);
+  });
+}
 
 //*hexadecimal color mode
 const hexMode = document.getElementById("hex");
@@ -53,22 +69,30 @@ function rainbowMode() {
 
 //*need to select the hexadecimal color mode
 hexMode.addEventListener("click", function () {
-  rainbowMode(0);
+  hexBrush();
 });
 
 //*change colors of individual grid on mosue hover
-colorContainer.addEventListener("mouseover", function (e) {
-  e.target.style.backgroundColor = rainbowMode();
-  // console.log(e.target);
-});
+
+function hexBrush() {
+  colorContainer.addEventListener("mouseover", function (e) {
+    e.target.style.backgroundColor = rainbowMode();
+    // console.log(e.target);
+  });
+}
 
 //*Erase the colors of the selected grid
+
 const eraser = document.getElementById("eraser");
 
-eraser.addEventListener("click", function (e) {
-  e.addEventListener("mouseover", function (event) {
-    event.target.style.backgroundColor = "blanchedalmond";
+function erase() {
+  colorContainer.addEventListener("mouseover", function (e) {
+    e.target.style.backgroundColor = "blanchedalmond";
   });
+}
+
+eraser.addEventListener("click", function () {
+  erase();
 });
 
 //*reset the colors of the grids
