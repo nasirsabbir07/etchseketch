@@ -20,13 +20,14 @@
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   place-items: center;
-  background: blue;
+  /* background: blue; */
 }
 
 .cursor-color-btns {
   display: flex;
   flex-direction: column;
-  min-height: 20vh;
+  min-height: 40vh;
+  align-items: center;
   justify-content: space-evenly;
   padding: 10px 10px;
   background: lemonchiffon;
@@ -46,6 +47,18 @@
   width: 500px;
   height: 500px;
   background-color: blanchedalmond;
+}
+
+/* #favcolor {
+  height: 80px;
+  width: 80px;
+  border: none;
+} */
+
+input[type="color"] {
+  height: 80px;
+  width: 80px;
+  border: none;
 }
 
 /* .grid-items {
