@@ -26,11 +26,11 @@
 .cursor-color-btns {
   display: flex;
   flex-direction: column;
-  min-height: 40vh;
+  min-height: 50vh;
   align-items: center;
   justify-content: space-evenly;
   padding: 10px 10px;
-  background: lemonchiffon;
+  /* background: lemonchiffon; */
 }
 
 .flex-items {
@@ -46,7 +46,7 @@
   margin: 10px;
   width: 500px;
   height: 500px;
-  background-color: blanchedalmond;
+  background-color: rgb(243, 239, 239);
 }
 
 /* #favcolor {
@@ -59,6 +59,29 @@ input[type="color"] {
   height: 80px;
   width: 80px;
   border: none;
+}
+
+.slider {
+  text-align: center;
+}
+
+#sizeRange {
+  width: 80%;
+}
+
+button {
+  width: 100%;
+  margin: 5px;
+  border: 0.5px black solid;
+  border-radius: 10px;
+  background: none;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #000;
+  color: aliceblue;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* .grid-items {
