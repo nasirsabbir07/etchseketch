@@ -20,6 +20,18 @@ const hexArr = [
 const colorContainer = document.querySelector(".plate-container");
 
 //*Create the grid board
+const sizeText = document.querySelector(".size");
+const defaultSize = 16;
+let gridSize = defaultSize;
+let size = document.getElementById("sizeRange");
+
+size.addEventListener("change", function () {
+  gridSize = size.value;
+  sizeText.innerHTML = `${gridSize} <i class="fa fa-times"></i> ${gridSize}`;
+  reset(0);
+  grid(gridSize, gridSize);
+});
+
 function grid(rows, columns) {
   colorContainer.style.setProperty("--gridRows", rows);
   colorContainer.style.setProperty("--gridCols", columns);
@@ -28,8 +40,6 @@ function grid(rows, columns) {
     colorContainer.appendChild(row).className = "grid-items";
   }
 }
-
-grid(16, 16);
 
 //*single color mode
 const colorMode = document.querySelector(".color-mode");
@@ -87,7 +97,7 @@ const eraser = document.getElementById("eraser");
 
 function erase() {
   colorContainer.addEventListener("mouseover", function (e) {
-    e.target.style.backgroundColor = "blanchedalmond";
+    e.target.style.backgroundColor = "rgb(243, 239, 239)";
   });
 }
 
@@ -100,7 +110,17 @@ const clear = document.querySelector("#clear");
 const gridItems = document.querySelectorAll(".grid-items");
 
 clear.addEventListener("click", function () {
-  gridItems.forEach(function (gridItem) {
-    gridItem.style.backgroundColor = "blanchedalmond";
-  });
+  // gridItems.forEach(function (gridItem) {
+  //   gridItem.style.backgroundColor = "blanchedalmond";
+  // });
+  reset(0);
+  grid(gridSize, gridSize);
 });
+
+function reset() {
+  colorContainer.innerHTML = "";
+}
+
+window.onload = () => {
+  grid(defaultSize, defaultSize);
+};
